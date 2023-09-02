@@ -26,11 +26,12 @@
 .categories {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    justify-content: center;
+    /* gap: 3rem; */
+
     color: #333;
     margin-bottom: 2rem;
 }
-
 
 .category {
     cursor: pointer;
@@ -38,6 +39,7 @@
     padding: 0.25rem 1.5rem;
     border: 1px solid #222;
     text-transform: capitalize;
+    margin:10px
 }
 
 .category.active {
@@ -157,3 +159,115 @@
     font-weight: bold;
     color: #222;
 }
+
+
+
+
+
+.blogtitle{
+font-size: 20px;
+font-weight: bold;
+}
+@media (max-width: 1200px) {
+    .blogtitle{
+        font-size: 12px;
+        font-weight: 600;
+        }
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+ justify-content: space-around;
+}
+
+.blog {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    /* margin-bottom: 2.5rem; */
+    /* background-color:blue; */
+    margin-top: 50px;
+
+}
+
+.blog>a>img {
+    height: 45%;
+    width:      100%;
+    object-fit: cover;
+}
+
+
+
+.blogDesc {
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 24px;
+    color: #444444;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+
+
+  .categoryAndMetadata {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 10px;
+}
+.blog .category {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 7px;
+    border: 1px solid #222;
+    text-transform: capitalize;
+}
+.wrapper {
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+
+@media (max-width: 800px) {
+    .categories {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* gap: 3rem; */
+    
+        color: #333;
+        margin-bottom: 2rem;
+    }
+    
+    
+    .category {
+        cursor: pointer;
+        border-radius: 12px;
+        padding: 10px;
+        border: 1px solid #222;
+        text-transform: capitalize;
+        margin:5px
+    }
+}
+
+
+.loading{
+    font-size: 40px;
+    }
+
+    @media (max-width:750px){
+        .loading{
+            font-size: 40px;
+            }
+    }

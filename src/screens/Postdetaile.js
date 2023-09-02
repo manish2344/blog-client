@@ -14,7 +14,7 @@ import {
   AiOutlineArrowRight,
   AiOutlineLike,
 } from "react-icons/ai";
-
+import {BiHappy} from 'react-icons/bi'
 const BlogDetails = () => {
   const navigate = useNavigate();
   const [blogDetails, setBlogDetails] = useState("");
@@ -26,7 +26,7 @@ const BlogDetails = () => {
   const loaduser = async () => {
     const options = { Authorization: `Bearer ${userInfo.token}` };
     const resource = await axios.get(
-      `http://localhost:5000/api/blog/find/${_id}`,
+      `https://blog-website-serverside.onrender.com/api/blog/find/${_id}`,
       options
     );
     console.log(resource.data);
@@ -36,7 +36,8 @@ const BlogDetails = () => {
 
   const handleDeleteBlog = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/blog/deleteBlog/${_id}`, {
+      await axios.delete(`https://blog-website-serverside.onrender.com/api/blog/deleteBlog/${_id}`, {
+   
         headers: { Authorization: `Bearer ${userInfo.token}` },
       });
       navigate("/");
@@ -68,7 +69,7 @@ const BlogDetails = () => {
                 </div>
               </div>
             ) : (
-              <h5>manish</h5>
+              <h5 className={classes.happyface}><BiHappy/></h5>
             )}
           </div>
           <div className={classes.descAndLikesViews}>

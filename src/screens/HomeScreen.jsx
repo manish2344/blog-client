@@ -8,6 +8,7 @@ import { MdOutlinePreview } from 'react-icons/md'
 import { AiFillLike } from 'react-icons/ai'
 import { FiArrowRight } from 'react-icons/fi'
 function Home() {
+  const [loading ,setloading]=  useState(true)
   const [blogs, setBlogs] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
@@ -16,10 +17,9 @@ function Home() {
     'food',
     'laptop',
     'phone',
-    'design',
-    'programming',
+    
     'fun',
-    'fashion'
+  
   ]
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -27,11 +27,12 @@ function Home() {
     loadusser();
   }, []);
   const loadusser = async () => {
-    var response = await axios.get("http://localhost:5000/api/blog/getall", {
+    var response = await axios.get("https://blog-website-serverside.onrender.com/api/blog/getall", {
       headers: { accesstoken: token },
     });
     setFilteredBlogs(response.data);
     setBlogs(response.data);
+    setloading(false)
     console.log(response.data)
   };
   useEffect(() => {
@@ -63,8 +64,10 @@ function Home() {
               </span>
             ))}
           </div>
-          
+        {loading && <div className={classes.loading}>Loading.....</div>}
+        
 <div className={classes.blogs}>
+
               {filteredBlogs.map((blog) => (
                
               <div key={blog._id} className={classes.blog}>
@@ -78,7 +81,7 @@ function Home() {
                         <MdOutlinePreview /> {blog.views} views
                       </div>
                     </div>
-                    <h4>{blog.title}</h4>
+                    <p className={classes.blogtitle}>{blog.title}</p>
                     <p className={classes.blogDesc}>
                       {blog.desc}
                     </p>
@@ -88,6 +91,7 @@ function Home() {
                   </div>
                 </div>
               ))}
+
             </div>
 
         </div>

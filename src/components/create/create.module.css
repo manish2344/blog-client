@@ -4,8 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
 }
 
 .wrapper {
@@ -128,4 +126,45 @@
     border-radius: 8px;
     border: 1px solid rgb(170, 165, 165);
     text-transform: capitalize;
+}
+
+
+@media (max-width: 800px) {
+    .container {
+        height: calc(100vh - 60px);
+        width:100%;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        margin:20px;
+    }
+    
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #444;
+        border-radius: 22px;
+        padding: 10px
+    }
+    .inputWrapperImg {
+        width: 240px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+
+
+    .submitBtn {
+        white-space: nowrap;
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: 150ms all;
+        margin-top: 1rem;
+        font-size: 12px;
+    }
 }

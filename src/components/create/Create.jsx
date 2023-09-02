@@ -35,7 +35,7 @@ export default function App() {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${userInfo.token}`
     }
-    const result = await axios.post("http://localhost:5000/api/blog/create",formData,{
+    const result = await axios.post("https://blog-website-serverside.onrender.com/api/blog/create",formData,{
     headers: {'Authorization': `Bearer ${userInfo.token}`}}
     // { headers: {"accesstoken": token}}
     )
@@ -70,8 +70,8 @@ export default function App() {
     </div>
     <div className={classes.inputWrapperSelect}>
       <label>Category: </label>
-      
-      <select   value={category}   className={classes.input} onChange={(e) => setcategory(e.target.value)}>
+     
+      <select  value={category}    className={classes.input} onChange={(e) => setcategory(e.target.value)}>
         {categories.map((category) => (
           <option key={crypto.randomUUID()} value={category}>{category}</option>
         ))}
